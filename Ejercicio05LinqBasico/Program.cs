@@ -119,17 +119,20 @@ foreach (var Persona in ConPersOrdSueldo)
 }
 
 //2. Seleccionar aquellos que sean mayores de edad.
-//Console.WriteLine("Ejercicio2\n");
-//var AnhoActual = DateOnly.FromDateTime(DateTime.Now).Year;
-//var ConPersMayoresEdad= Personas.Where(x=> x.Ed).Select(x => x);
-//foreach (var Persona in ConPersOrdSueldo)
-//{
-//    Console.WriteLine(Persona);
-//}
+Console.WriteLine("Ejercicio2\n");
+var ConPersMayoresEdad = Personas.Where(x => DateOnly.FromDateTime(DateTime.Today).Year - x.FechaNacimiento.Year >= 18);
+foreach (var Persona in ConPersMayoresEdad)
+{
+    Console.WriteLine(Persona);
+}
 
 //3. Ordenar por edad de más joven a menos joven.
 Console.WriteLine("Ejercicio3\n");
-
+var ConPersMayorAMenor = Personas.OrderByDescending(x=>x.FechaNacimiento);
+foreach (var Persona in ConPersMayorAMenor)
+{
+    Console.WriteLine(Persona);
+}
 
 //4. Seleccionar aquellos cuyo nombre comienza por A o por E
 Console.WriteLine("Ejercicio4\n");
@@ -150,3 +153,8 @@ Console.WriteLine(ConPerSueldoMedio);
 
 //7. Ordenar por sueldo, para aquellos mayores de edad que tienen un sueldo par.
 Console.WriteLine("Ejercicio7\n");
+var ConPerOrdSueldoMayoresEdadSueldoPar = Personas.Where(x => DateOnly.FromDateTime(DateTime.Today).Year - x.FechaNacimiento.Year >= 18 && x.Sueldo %2==0).OrderBy(x => x.Sueldo);
+foreach (var Persona in ConPerOrdSueldoMayoresEdadSueldoPar)
+{
+    Console.WriteLine(Persona);
+}
