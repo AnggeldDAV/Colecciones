@@ -117,6 +117,7 @@ foreach (var Persona in ConPersOrdSueldo)
 {
     Console.WriteLine(Persona);
 }
+
 //2. Seleccionar aquellos que sean mayores de edad.
 //Console.WriteLine("Ejercicio2\n");
 //var AnhoActual = DateOnly.FromDateTime(DateTime.Now).Year;
@@ -125,12 +126,18 @@ foreach (var Persona in ConPersOrdSueldo)
 //{
 //    Console.WriteLine(Persona);
 //}
+
 //3. Ordenar por edad de más joven a menos joven.
 Console.WriteLine("Ejercicio3\n");
 
+
 //4. Seleccionar aquellos cuyo nombre comienza por A o por E
 Console.WriteLine("Ejercicio4\n");
-
+var ConPerNombrePorAoE = Personas.Where(x => x.Nombre.StartsWith("A") || x.Nombre.StartsWith("E"));
+foreach (var Persona in ConPerNombrePorAoE)
+{
+    Console.WriteLine(Persona);
+}
 //5. Saber cual es el sueldo total.
 Console.WriteLine("Ejercicio5\n");
 var ConPerSueldoTotal = Personas.Sum(x => x.Sueldo);
