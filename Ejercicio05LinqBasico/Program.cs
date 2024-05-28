@@ -118,13 +118,13 @@ foreach (var Persona in ConPersOrdSueldo)
     Console.WriteLine(Persona);
 }
 //2. Seleccionar aquellos que sean mayores de edad.
-Console.WriteLine("Ejercicio2\n");
-var AnhoActual = DateOnly.FromDateTime(DateTime.Now).Year;
-var ConPersMayoresEdad= Personas.Where(x=> x.Ed).Select(x => x);
-foreach (var Persona in ConPersOrdSueldo)
-{
-    Console.WriteLine(Persona);
-}
+//Console.WriteLine("Ejercicio2\n");
+//var AnhoActual = DateOnly.FromDateTime(DateTime.Now).Year;
+//var ConPersMayoresEdad= Personas.Where(x=> x.Ed).Select(x => x);
+//foreach (var Persona in ConPersOrdSueldo)
+//{
+//    Console.WriteLine(Persona);
+//}
 //3. Ordenar por edad de más joven a menos joven.
 Console.WriteLine("Ejercicio3\n");
 
@@ -133,9 +133,13 @@ Console.WriteLine("Ejercicio4\n");
 
 //5. Saber cual es el sueldo total.
 Console.WriteLine("Ejercicio5\n");
+var ConPerSueldoTotal = Personas.Sum(x => x.Sueldo);
+Console.WriteLine(ConPerSueldoTotal);
 
 //6. Saber cual es el sueldo medio.
 Console.WriteLine("Ejercicio6\n");
+var ConPerSueldoMedio = Personas.Average(x => x.Sueldo);
+Console.WriteLine(ConPerSueldoMedio);
 
 //7. Ordenar por sueldo, para aquellos mayores de edad que tienen un sueldo par.
 Console.WriteLine("Ejercicio7\n");
